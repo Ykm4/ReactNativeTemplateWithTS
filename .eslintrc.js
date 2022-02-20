@@ -1,16 +1,27 @@
 module.exports = {
-  root: true,
-  extends: '@react-native-community',
+  env: {
+    es2021: true,
+    node: true,
+  },
   parser: '@typescript-eslint/parser',
-  plugins: ['@typescript-eslint'],
-  overrides: [
-    {
-      files: ['*.ts', '*.tsx'],
-      rules: {
-        '@typescript-eslint/no-shadow': ['error'],
-        'no-shadow': 'off',
-        'no-undef': 'off',
-      },
+  parserOptions: {
+    ecmaFeatures: {
+      jsx: true,
     },
+    ecmaVersion: 2021,
+    sourceType: 'module',
+  },
+  plugins: ['react'],
+  extends: [
+    'eslint:recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:react/recommended',
+    'plugin:react-hooks/recommended',
+    // 競合避けるため prettier は最後に読み込み
+    'prettier',
   ],
+  settings: {},
+  rules: {
+    'react/prop-types': 'off',
+  },
 };
