@@ -15,3 +15,8 @@ export function BottomTab() {
     </Navigator>
   );
 }
+
+/**
+ * Tabナビゲータに画面（TodoBoardやUserSetting）を直接設定してもよいですが、 タブ内で画面遷移させたい場合、Stackナビゲータを設定する必要があります。
+ * 今回のアプリではタブ内で画面遷移しないため必要ありませんが、一般的な実装方法としてStackナビゲータを設定します
+ */
