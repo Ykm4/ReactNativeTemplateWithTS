@@ -2,12 +2,12 @@ import React from 'react';
 import { View, Text, StyleSheet, Button } from 'react-native';
 import { RootStackScreenProps } from '../../navigation/RootStack';
 
-export function Welcome({ navigation }: RootStackScreenProps<'Welcome'>) {
+export function Login({ navigation }: RootStackScreenProps<'Login'>) {
   return (
     <View style={styles.container}>
-      <Text>Welcome</Text>
+      <Text>Login</Text>
       <View>
-        <Button onPress={() => navigation.navigate('Login')} title="登録する" />
+        <Button onPress={() => navigation.navigate('TodoBoard')} title="ログイン" />
       </View>
     </View>
   );

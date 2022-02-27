@@ -1,5 +1,8 @@
 // https://prettier.io/docs/en/options.html
 module.exports = {
+  // https://prettier.io/docs/en/options.html#print-width
+  // 折り返す行の長さを指定
+  printWidth: 120,
   // https://prettier.io/docs/en/options.html#bracket-spacing
   // import { React } from 'React' のように、{}の間にスペースを入れる
   bracketSpacing: true,
