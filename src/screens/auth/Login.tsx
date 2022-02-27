@@ -1,13 +1,19 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { View, Text, StyleSheet, Button } from 'react-native';
-import { RootStackScreenProps } from '../../navigation/RootStack';
+import { useUserContext } from '../../contexts/UserContext';
+import { UnAuthedStackScreenProps } from '../../navigation/UnAuthedStack';
 
-export function Login({ navigation }: RootStackScreenProps<'Login'>) {
+export function Login({ navigation }: UnAuthedStackScreenProps<'Login'>) {
+  const { login } = useUserContext();
+  const handleLogin = useCallback(() => {
+    login('user', 'password');
+  }, [login]);
+
   return (
     <View style={styles.container}>
       <Text>Login</Text>
       <View>
-        <Button onPress={() => navigation.navigate('TodoBoard')} title="ログイン" />
+        <Button onPress={handleLogin} title="ログイン" />
       </View>
     </View>
   );
