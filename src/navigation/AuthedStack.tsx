@@ -1,9 +1,9 @@
 import React from 'react';
 import { createNativeStackNavigator, NativeStackScreenProps } from '@react-navigation/native-stack';
-import { TodoBoard } from '../screens/todo/TodoBoard';
+import { BottomTab } from './BottomTab';
 
 export type AuthedStackParamList = {
-  TodoBoard: undefined;
+  BottomTab: undefined;
 };
 
 export type AuthedStackScreenProps<K extends keyof AuthedStackParamList> = NativeStackScreenProps<
@@ -15,8 +15,8 @@ const { Navigator, Screen } = createNativeStackNavigator<AuthedStackParamList>()
 
 export function AuthedStack() {
   return (
-    <Navigator initialRouteName="TodoBoard" screenOptions={{ headerShown: false }}>
-      <Screen name="TodoBoard" component={TodoBoard} />
+    <Navigator screenOptions={{ headerShown: false }}>
+      <Screen name="BottomTab" component={BottomTab} />
     </Navigator>
   );
 }
